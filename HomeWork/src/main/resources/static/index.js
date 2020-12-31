@@ -1,11 +1,12 @@
+
 angular.module('app', []).controller('indexController', function ($scope, $http) {
     const contextPath = 'http://localhost:8189/app';
 
     $scope.fillTable = function () {
         $http.get(contextPath + '/products/')
             .then(function (response) {
-                ProductsList = response.data;
-                $scope.ProductsList;
+                console.log(response.data)
+                $scope.ProductsList = response.data;
             });
     };
     $scope.fillTable();
@@ -33,4 +34,28 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
                 $scope.fillTable();
         });
     };
+
+    $scope.forwardList = function () {
+        $http({
+            url: contextPath + '/products/forward/',
+            method: 'GET',
+            params:{
+            }
+        }).then(function (response){
+            console.log(response)
+            $scope.ProductsList = response.data;
+        });
+    };
+
+    $scope.backList = function(){
+        $http({
+           url: contextPath + '/products/back/',
+           method: 'GET',
+           params:{
+           }
+        }).then(function (response){
+            console.log(response)
+            $scope.ProductsList = response.data;
+        });
+    }
 });

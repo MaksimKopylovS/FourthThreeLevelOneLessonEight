@@ -22,7 +22,6 @@ public class ProductController {
         this.productService = productService;
     }
 
-
     @GetMapping
     public List<Product> findAllProducts(
             @RequestParam(name = "productId", required = false) Long productId) {
@@ -36,7 +35,16 @@ public class ProductController {
     @PostMapping
     public Product saveNewProduct(@RequestBody Product product){
         product.setId(null);
+        System.out.println(product.toString() + "       dafssssssdfsa");
         return productService.saveOrUpdate(product);
+    }
+    @GetMapping("/forward")
+    public List<Product> forwardList(){
+        return productService.forwardList();
+    }
+    @GetMapping("/back")
+    public List<Product> backList(){
+        return productService.backList();
     }
 
 }

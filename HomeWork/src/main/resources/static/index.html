@@ -26,18 +26,19 @@
         <div class="form-group col-md-6">
             <label for="productPrice">Цена</label>
             <input align="vertical" class="form-control" type="number" ng-model="product.cost" id="productPrice">
+        </div>
+        <div>
             <input class="btn btn-success" type="submit" value="Сохранить">
         </div>
     </form>
 
     <h3>Список товаров
-        <button style="margin-left: 180px" class="btn btn-success" ng-click="fillTable()" type="submit">
-            Обновить
+        <button class="btn btn-success" ng-click="fillTable()" type="submit">
+            Начало
         </button>
     </h3>
 
     <table class="table table-hover" cellpadding="0" cellspacing="0">
-
         <thead>
         <tr>
             <td>ID</td>
@@ -62,14 +63,14 @@
         </tbody>
     </table>
     <div style="float: left" width:50>
-    <form navalid ng-submit="backList()">
-    <button class="btn btn-info" type = "submit">Назад</button>
-    </form>
+        <form navalid ng-submit="backList()">
+            <button class="btn btn-info" type="submit">Назад</button>
+        </form>
     </div>
     <div style="float: left" width:50>
-    <form navalid ng-submit="forwardList()">
-    <button class="btn btn-info" type = "submit" >Вперед</button>
-    </form>
+        <form navalid ng-submit="forwardList()">
+            <button class="btn btn-info" type="submit">Вперед</button>
+        </form>
     </div>
 </div>
 </body>

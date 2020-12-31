@@ -1,6 +1,5 @@
 package max.sk.HomeWork.model;
 
-import jdk.jfr.Enabled;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
